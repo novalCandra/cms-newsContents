@@ -1,1 +1,373 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap");
 @import "tailwindcss";
+
+@theme {
+  /* ---------- Fonts ---------- */
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+
+  /* ---------- Brand colors (from "Colors" section) ---------- */
+  --color-ink: #111316;
+    --color-canvas: #f7f8fa;
+    --color-paper: #ffffff;
+  
+    --color-primary: #ff5a4f;
+    /* Coral */
+    --color-on-primary: #ffffff;
+    --color-secondary: #4dabff;
+    /* Sky Blue */
+    --color-on-secondary: #111316;
+    --color-lime: #aeea00;
+    /* Success */
+    --color-tertiary: #ffc83d;
+    /* Warm Yellow */
+    --color-on-tertiary: #111316;
+/* ---------- Material-style tokens (from front-matter) ---------- */
+  --color-surface: #f9f9fd;
+    --color-surface-dim: #d9dade;
+    --color-surface-bright: #f9f9fd;
+    --color-surface-container-lowest: #ffffff;
+    --color-surface-container-low: #f3f3f7;
+    --color-surface-container: #eeedf2;
+    --color-surface-container-high: #e8e8ec;
+    --color-surface-container-highest: #e2e2e6;
+    --color-surface-variant: #e2e2e6;
+    --color-on-surface: #1a1c1f;
+    --color-on-surface-variant: #5a403d;
+    --color-inverse-surface: #2f3034;
+    --color-inverse-on-surface: #f0f0f4;
+    --color-outline: #8e706c;
+    --color-outline-variant: #e3beba;
+    --color-surface-tint: #b52421;
+    --color-background: #f9f9fd;
+    --color-on-background: #1a1c1f;
+  
+    /* Deeper variants of the brand hues (front-matter values) */
+    --color-primary-strong: #b52421;
+  --color-primary-container: #ff5a4f;
+    --color-on-primary-container: #600004;
+  --color-inverse-primary: #ffb4ab;
+  --color-primary-fixed: #ffdad6;
+    --color-primary-fixed-dim: #ffb4ab;
+  --color-on-primary-fixed: #410002;
+  --color-on-primary-fixed-variant: #92030c;
+  
+    --color-secondary-strong: #0062a0;
+    --color-secondary-container: #4dabff;
+    --color-on-secondary-container: #003e68;
+    --color-secondary-fixed: #d0e4ff;
+    --color-secondary-fixed-dim: #9ccaff;
+    --color-on-secondary-fixed: #001d35;
+    --color-on-secondary-fixed-variant: #00497a;
+  
+    --color-tertiary-strong: #785a00;
+    --color-tertiary-container: #b98c00;
+    --color-on-tertiary-container: #392900;
+    --color-tertiary-fixed: #ffdf9c;
+    --color-tertiary-fixed-dim: #f5bf34;
+    --color-on-tertiary-fixed: #251a00;
+    --color-on-tertiary-fixed-variant: #5b4300;
+  
+    --color-error: #ba1a1a;
+    --color-on-error: #ffffff;
+    --color-error-container: #ffdad6;
+    --color-on-error-container: #93000a;
+  
+    /* ---------- Typography scale ---------- */
+    --text-headline-xl: 3rem;
+    --text-headline-xl--line-height: 3.375rem;
+    --text-headline-xl--letter-spacing: -0.04em;
+    --text-headline-xl--font-weight: 800;
+  
+    --text-headline-xl-mobile: 2.125rem;
+    --text-headline-xl-mobile--line-height: 2.5rem;
+    --text-headline-xl-mobile--letter-spacing: -0.035em;
+    --text-headline-xl-mobile--font-weight: 800;
+  
+    --text-headline-lg: 2.25rem;
+    --text-headline-lg--line-height: 2.75rem;
+    --text-headline-lg--letter-spacing: -0.035em;
+  --text-headline-lg--font-weight: 800;
+  --text-headline-lg-mobile: 1.75rem;
+    --text-headline-lg-mobile--line-height: 2.125rem;
+  --text-headline-lg-mobile--letter-spacing: -0.03em;
+  --text-headline-lg-mobile--font-weight: 800;
+
+  --text-headline-md: 1.625rem;
+  --text-headline-md--line-height: 2rem;
+  --text-headline-md--letter-spacing: -0.03em;
+  --text-headline-md--font-weight: 800;
+
+  --text-headline-sm: 1.25rem;
+  --text-headline-sm--line-height: 1.625rem;
+  --text-headline-sm--letter-spacing: -0.02em;
+  --text-headline-sm--font-weight: 700;
+
+  --text-title-md: 1.125rem;
+  --text-title-md--line-height: 1.5rem;
+  --text-title-md--letter-spacing: -0.015em;
+  --text-title-md--font-weight: 700;
+
+  --text-title-sm: 1rem;
+  --text-title-sm--line-height: 1.375rem;
+  --text-title-sm--letter-spacing: -0.01em;
+  --text-title-sm--font-weight: 700;
+
+  --text-body-lg: 1.0625rem;
+  --text-body-lg--line-height: 1.625rem;
+  --text-body-lg--font-weight: 500;
+
+  --text-body-md: 0.9375rem;
+  --text-body-md--line-height: 1.375rem;
+  --text-body-md--font-weight: 400;
+
+  --text-body-sm: 0.8125rem;
+  --text-body-sm--line-height: 1.125rem;
+  --text-body-sm--font-weight: 400;
+
+  --text-label-lg: 0.9375rem;
+  --text-label-lg--line-height: 1.25rem;
+  --text-label-lg--letter-spacing: -0.01em;
+  --text-label-lg--font-weight: 700;
+
+  --text-label-md: 0.8125rem;
+  --text-label-md--line-height: 1rem;
+  --text-label-md--letter-spacing: -0.005em;
+  --text-label-md--font-weight: 700;
+
+  --text-label-sm: 0.6875rem;
+  --text-label-sm--line-height: 0.875rem;
+  --text-label-sm--letter-spacing: 0.02em;
+  --text-label-sm--font-weight: 800;
+
+  /* ---------- Radius ---------- */
+  --radius-sm: 0.5rem;
+  --radius-md: 1.5rem;
+  --radius-lg: 2rem;
+  --radius-xl: 3rem;
+  --radius-DEFAULT: 1rem;
+  --radius-full: 9999px;
+
+  /* ---------- Spacing tokens (use as p-gutter, mt-space-lg, ...) ---------- */
+  --spacing-gutter: 1.25rem;
+  --spacing-gutter-desktop: 1.5rem;
+  --spacing-margin: 1rem;
+  --spacing-margin-tablet: 1.5rem;
+  --spacing-margin-desktop: 2.5rem;
+  --spacing-space-xs: 0.25rem;
+  --spacing-space-sm: 0.5rem;
+  --spacing-space-md: 1rem;
+  --spacing-space-lg: 1.5rem;
+  --spacing-space-xl: 2rem;
+  --spacing-space-2xl: 3rem;
+
+  /* ---------- Breakpoints (mobile <640, tablet 640–1023, desktop ≥1024) ---------- */
+  --breakpoint-sm: 40rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+  /* 1280px max container */
+
+  /* ---------- Hard offset "sticker" shadows ---------- */
+  --shadow-level-0: 0 0 0 #111316;
+  --shadow-level-1: 0 4px 0 #111316;
+  --shadow-level-2: 0 6px 0 #111316;
+  --shadow-card: 0 8px 0 #111316;
+  --shadow-level-3: 0 10px 0 #111316;
+  --shadow-chip: 0 3px 0 #111316;
+  --shadow-press: 0 2px 0 #111316;
+  --shadow-hover: 0 8px 0 #111316;
+
+  --shadow-level-0-white: 0 4px 0 #EEEEEE;
+}
+
+/* ---------- Base ---------- */
+@layer base {
+  html {
+    font-family: var(--font-sans);
+  }
+
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+    font-size: var(--text-body-md);
+    line-height: 1.5;
+  }
+
+  /* Responsive headline helpers: mobile size by default, desktop at sm+ */
+  .h-xl {
+    @apply text-headline-xl-mobile sm:text-headline-xl text-ink;
+  }
+
+  .h-lg {
+    @apply text-headline-lg-mobile sm:text-headline-lg text-ink;
+  }
+}
+
+/* ---------- Tactile press / hover physics ---------- */
+@utility tactile {
+  transition: transform 120ms ease, box-shadow 120ms ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 0 #111316;
+  }
+
+  &:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 #111316;
+  }
+}
+
+@utility tilt-hover {
+  transition: transform 150ms ease;
+
+  &:hover {
+    transform: rotate(-1deg);
+  }
+}
+
+/* ---------- Components ---------- */
+@layer components {
+
+  /* Containers */
+  .container-app {
+    @apply mx-auto w-full max-w-[80rem] px-margin sm:px-margin-tablet lg:px-margin-desktop;
+  }
+
+  /* Buttons */
+  .btn,
+  .btn-primary,
+  .btn-secondary,
+  .btn-secondary-blue,
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-ink px-6 py-3 text-label-lg text-ink cursor-pointer select-none tactile;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-on-primary shadow-level-2;
+  }
+
+  .btn-primary:active {
+    box-shadow: 0 0 0 #111316;
+    transform: translateY(6px);
+  }
+
+  .btn-secondary {
+    @apply bg-paper shadow-level-1;
+  }
+
+  .btn-secondary-blue {
+    @apply bg-secondary shadow-level-1;
+  }
+
+  .btn-ghost {
+    @apply border-transparent bg-transparent shadow-none;
+  }
+
+  .btn-ghost:hover {
+    @apply border-ink bg-ink/5;
+    transform: none;
+    box-shadow: none;
+  }
+
+  /* Sticker chips & badges */
+  .chip,
+  .chip-new,
+  .chip-success,
+  .chip-ai,
+  .chip-draft,
+  .chip-neutral {
+    @apply inline-flex items-center rounded-full border-2 border-ink px-3 py-1 text-label-md text-ink;
+  }
+
+  .chip-new {
+    @apply bg-primary text-on-primary;
+  }
+
+  .chip-success {
+    @apply bg-lime;
+  }
+
+  .chip-ai {
+    @apply bg-secondary;
+  }
+
+  .chip-draft {
+    @apply bg-tertiary;
+  }
+
+  .chip-neutral {
+    @apply bg-paper shadow-chip;
+  }
+
+  /* Cards */
+  .card,
+  .card-accent-yellow,
+  .card-accent-blue,
+  .sticker-card {
+    @apply rounded-md border-2 border-ink bg-paper p-space-lg shadow-card;
+  }
+
+  .card-hero {
+    @apply rounded-lg border-2 border-ink bg-paper p-space-lg shadow-level-3;
+  }
+
+  .card-accent-yellow {
+    @apply bg-tertiary text-ink;
+  }
+
+  .card-accent-blue {
+    @apply bg-secondary text-ink;
+  }
+
+  /* Inputs */
+  .input {
+    @apply w-full rounded-DEFAULT border-2 border-ink bg-paper px-[18px] py-3 text-body-md text-ink outline-none;
+  }
+
+  .input:focus {
+    box-shadow: 0 4px 0 #111316;
+  }
+
+  .input:disabled {
+    @apply bg-surface-container-low shadow-none;
+  }
+
+  /* Checkbox / radio */
+  .check {
+    @apply size-[22px] shrink-0 appearance-none rounded-sm border-2 border-ink bg-paper shadow-press cursor-pointer;
+  }
+
+  .check:checked {
+    @apply bg-lime;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23111316' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L19 7'/%3E%3C/svg%3E");
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .check-coral:checked {
+    @apply bg-primary;
+  }
+
+  /* Sticker dock (horizontal scroll strip) */
+  .sticker-dock {
+    @apply flex gap-space-md overflow-x-auto px-1 pt-2 pb-4;
+  }
+
+  .sticker-card {
+    @apply shrink-0 tilt-hover cursor-pointer;
+  }
+
+  /* Segmented progress bar */
+  .progress {
+    @apply flex h-6 gap-1 overflow-hidden rounded-full border-2 border-ink bg-paper p-0.5;
+  }
+
+  .progress>.seg {
+    @apply flex-1 rounded-full bg-lime;
+  }
+
+  .progress>.seg-empty {
+    @apply flex-1 rounded-full bg-transparent;
+  }
+}
