@@ -139,7 +139,7 @@ function App() {
             </form>
           </div>
 
-          <div className="flex flex-col space-y-4 w-full md:w-180 h-120 md:h-140 lg:h-100 bg-white border-2 border-black rounded- shadow-level-2 rounded-md px-2 py-4 md:px-4 md:py-6">
+          <div className="flex flex-col space-y-4 w-full md:w-180 h-120 md:h-140 lg:h-102 bg-white border-2 border-black rounded- shadow-level-2 rounded-md px-2 py-4 md:px-4 md:py-6">
             <h2 className="font-sans text-headline-sm md:text-headline-md lg:text-headline-sm">{dataBerita?.summary ?? "Summary of the latest news from Indonesia and abroad"}</h2>
 
             {/* <div className="grid grid-cols-2 md:grid-cols-4 space-y-2">
