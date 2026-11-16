@@ -2,6 +2,7 @@ import { Copy, Download, Link, Plus } from "lucide-react"
 import Navbar from "./components/navbar"
 import Footer from "./components/footer"
 import { useState, type FormEvent } from "react"
+import { ToastContainer, toast } from "react-toastify"
 
 interface ArticleData {
   summary: string;
@@ -27,6 +28,12 @@ function App() {
   const [dataBerita, setData] = useState<ArticleData | null>(null);
   const [loading, setLoading] = useState<boolean>(false)
   const [isCopied, setIsCopied] = useState<boolean>(false);
+
+  // nontifikasi
+  // function nontifikasiUrl(txt: string) {
+  //   const NontifikasiAlleert = () => toast(txt)
+  //   return NontifikasiAlleert
+  // }
   const handleSubmit = async (e: FormEvent) => {
     setLoading(true)
     e.preventDefault()
@@ -44,7 +51,9 @@ function App() {
       setLoading(false)
       const response: ApiReponse = await request.json();
       setData(response.data)
+      toast.success("Success Upload Link")
     } catch (error) {
+      toast.error("ERROR UPLOAD LINK")
       console.error(error)
     }
   }
@@ -77,11 +86,11 @@ function App() {
       link.download = "ringkasan-berita.txt";
       document.body.appendChild(link);
       link.click()
+      toast.success("success downlaod data.txt")
     } catch (error) {
       return console.log(error)
     }
   }
-
   return (
     <>
       <Navbar />
@@ -125,7 +134,7 @@ function App() {
             disabled:translate-y-0
             ">
                 <Plus />
-                <p>Extract Website Url</p>
+                <p>{loading ? "LOAD URL LINK WESBITE" : "Extract Website Url"}</p>
               </button>
             </form>
           </div>
@@ -177,6 +186,18 @@ function App() {
           </div>
         </section>
       </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <Footer />
     </>
   )
