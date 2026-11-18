@@ -29,11 +29,6 @@ function App() {
   const [loading, setLoading] = useState<boolean>(false)
   const [isCopied, setIsCopied] = useState<boolean>(false);
 
-  // nontifikasi
-  // function nontifikasiUrl(txt: string) {
-  //   const NontifikasiAlleert = () => toast(txt)
-  //   return NontifikasiAlleert
-  // }
   const handleSubmit = async (e: FormEvent) => {
     setLoading(true)
     e.preventDefault()
@@ -149,7 +144,7 @@ function App() {
               <div className="bg-primary border-2 border-black w-40 text-center rounded-2xl shadow-level-1 font-sans font-bold h-8 flex flex-col justify-center">4 min read</div>
             </div> */}
 
-            <textarea className="border-2 border-black font-sans font-black px-2 py-2 h-64 md:h-100 rounded-sm scrollbar scrollbar-thumb-primary overflow-auto resize-none "
+            <textarea className="border-2 border-black bg-gray-200 font-sans font-black px-2 py-2 h-64 md:h-100 rounded-sm scrollbar scrollbar-thumb-primary overflow-auto resize-none "
               readOnly
               placeholder="Rangkuman Content News"
               value={formatedTextAi}
