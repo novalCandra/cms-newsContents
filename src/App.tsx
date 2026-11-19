@@ -1,91 +1,13 @@
 import { Copy, Download, Link, Plus } from "lucide-react"
 import Navbar from "./components/navbar"
 import Footer from "./components/footer"
-import { useState, type FormEvent } from "react"
-import { ToastContainer, toast } from "react-toastify"
 
-interface ArticleData {
-  summary: string;
-  keyPoints: string[];
-  instagram: {
-    hook: string;
-    caption: string;
-    hashtags: string[];
-  };
-  tiktok: {
-    hook: string;
-    script: string;
-    onScreenText: string[];
-  };
-}
+import { ToastContainer } from "react-toastify"
+import { UseHookArticleArtificial } from "./hooks/useHooksAi"
 
-interface ApiReponse {
-  status: boolean;
-  data: ArticleData
-}
+
 function App() {
-  const [urlLink, setUrlLink] = useState<string>("")
-  const [dataBerita, setData] = useState<ArticleData | null>(null);
-  const [loading, setLoading] = useState<boolean>(false)
-  const [isCopied, setIsCopied] = useState<boolean>(false);
-
-  const handleSubmit = async (e: FormEvent) => {
-    setLoading(true)
-    e.preventDefault()
-    try {
-      const request = await fetch(`${import.meta.env.VITE_API_URL}/generate`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          url: urlLink
-        })
-      })
-
-      setLoading(false)
-      const response: ApiReponse = await request.json();
-      setData(response.data)
-      toast.success("Success Upload Link")
-    } catch (error) {
-      toast.error("ERROR UPLOAD LINK")
-      console.error(error)
-    }
-  }
-
-  const formatedTextAi = dataBerita?.keyPoints ? dataBerita.keyPoints.join("\n") : "";
-
-
-  const hanldeCopyText = async () => {
-    if (!formatedTextAi.trim()) return;
-    try {
-      await navigator.clipboard.writeText(formatedTextAi);
-      setIsCopied(true)
-
-      setTimeout(() => {
-        setIsCopied(false)
-      }, 2000)
-    } catch (error) {
-      return console.log(error)
-    }
-  }
-
-  const handleDownloadTxt = async () => {
-    try {
-      const blob = new Blob([formatedTextAi], { type: "text/plain;charset=utf-8" });
-
-      const url = URL.createObjectURL(blob);
-
-      const link = document.createElement("a");
-      link.href = url;
-      link.download = "ringkasan-berita.txt";
-      document.body.appendChild(link);
-      link.click()
-      toast.success("success downlaod data.txt")
-    } catch (error) {
-      return console.log(error)
-    }
-  }
+  const { setUrlLink, dataBerita, loading, isCopied, handleSubmit, hanldeCopyText, handleDownloadTxt, urlLink, formatedTextAi } = UseHookArticleArtificial()
   return (
     <>
       <Navbar />
@@ -137,12 +59,12 @@ function App() {
           <div className="flex flex-col space-y-4 w-full md:w-180 h-120 md:h-140 lg:h-102 bg-white border-2 border-black rounded- shadow-level-2 rounded-md px-2 py-4 md:px-4 md:py-6">
             <h2 className="font-sans text-headline-sm md:text-headline-md lg:text-headline-sm">{dataBerita?.summary ?? "Summary of the latest news from Indonesia and abroad"}</h2>
 
-            {/* <div className="grid grid-cols-2 md:grid-cols-4 space-y-2">
-              <div className="bg-blue-500 border-2 border-black w-40 text-center rounded-2xl shadow-level-1 font-sans font-bold h-8 flex flex-col justify-center">arstechnica.com</div>
-              <div className="bg-green-500 border-2 border-black w-40 text-center rounded-2xl shadow-level-1 font-sans font-bold h-8 flex flex-col justify-center">By John Timmer</div>
-              <div className="bg-yellow-400 border-2 border-black w-40 text-center rounded-2xl shadow-level-1 font-sans font-bold h-8 flex flex-col justify-center">940 words</div>
-              <div className="bg-primary border-2 border-black w-40 text-center rounded-2xl shadow-level-1 font-sans font-bold h-8 flex flex-col justify-center">4 min read</div>
-            </div> */}
+            <div className="grid grid-cols-2 md:grid-cols-4 space-y-2">
+              <div className="bg-blue-500 border-2 border-black w-40 text-center rounded-2xl shadow-level-1 font-sans font-bold h-8 flex flex-col justify-center">{dataBerita?.sourceWebsite ?? "link webiste"}</div>
+              <div className="bg-green-500 border-2 border-black w-40 text-center rounded-2xl shadow-level-1 font-sans font-bold h-8 flex flex-col justify-center">{dataBerita?.narasumber ?? "narasumber"}</div>
+              <div className="bg-yellow-400 border-2 border-black w-40 text-center rounded-2xl shadow-level-1 font-sans font-bold h-8 flex flex-col justify-center">{dataBerita?.readingTime ?? "0 menit"}</div>
+              <div className="bg-primary border-2 border-black w-40 text-center rounded-2xl shadow-level-1 font-sans font-bold h-8 flex flex-col justify-center">{dataBerita?.pageCount ?? "0 page"}</div>
+            </div>
 
             <textarea className="border-2 border-black bg-gray-200 font-sans font-black px-2 py-2 h-64 md:h-100 rounded-sm scrollbar scrollbar-thumb-primary overflow-auto resize-none "
               readOnly
