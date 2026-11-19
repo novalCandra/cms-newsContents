@@ -102,7 +102,7 @@ type ExtractState = "idle" | "stripping" | "done"
 
 function TickerBanner() {
   const row = (
-    <>
+    <div className="flex items-center gap-8 pr-8">
       {TICKER_ITEMS.map((item, i) => (
         <span key={i} className="flex items-center gap-8">
           <span>{item}</span>
@@ -112,15 +112,15 @@ function TickerBanner() {
           />
         </span>
       ))}
-    </>
+    </div>
   )
 
   return (
     <div
       aria-hidden="true"
-      className="relative z-20 w-full -rotate-1 scale-105 select-none overflow-hidden border-y-2 border-ink bg-tertiary py-2 sm:py-3 shadow-[0_4px_0_#111316]"
+      className="relative z-20 w-full -rotate-1 scale-105 select-none overflow-hidden border-y-2 border-ink bg-tertiary py-2 shadow-[0_4px_0_#111316] sm:py-3"
     >
-      <div className="animate-marquee flex w-max items-center gap-8 whitespace-nowrap text-label-lg uppercase text-ink">
+      <div className="animate-marquee flex w-max items-center whitespace-nowrap text-label-lg uppercase text-ink">
         {row}
         {row}
       </div>
