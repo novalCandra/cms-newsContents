@@ -17,6 +17,7 @@ function App() {
           <p className="font-sans text-body-md md:text-body-md xl:text-body-lg font-semibold text-gray-600 text-center selection:bg-primary selection:text-white">Zero clutter, no paywall popups, no AI hallucinations. Server-side structured extraction powered by Mozilla Readability & JSDOM.</p>
 
           <div className="absolute hidden md:flex md:flex-col justify-center items-center font-sans font-bold bg-yellow-400 border-2 border-black rounded-4xl shadow-level-1 w-48 top-2 h-8 -left-28 -rotate-19">DATA COPYWRITING</div>
+          <div className="absolute hidden md:flex md:flex-col justify-center items-center font-sans font-bold bg-blue-400 border-2 border-black rounded-4xl shadow-level-1 w-48 top-8 h-8 -right-32 rotate-16">DATA ANALIYS</div>
         </header>
         <section className="flex flex-col space-y-8">
           <div className="flex flex-col space-y-4 h-46 md:h-48 lg:h-44 bg-white border-2 border-black rounded- shadow-level-2 rounded-md px-2 py-4">
