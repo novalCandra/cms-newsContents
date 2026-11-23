@@ -1,6 +1,4 @@
-
 import { Copy, Download, Link, Plus } from "lucide-react"
-
 
 import { ToastContainer } from "react-toastify"
 import { UseHookArticleArtificial } from "../hooks/useHooksAi"
@@ -58,8 +56,8 @@ export default function Artickle() {
                         <h2 className="font-sans text-headline-sm md:text-headline-md lg:text-headline-sm">{dataBerita?.summary ?? "Summary of the latest news from Indonesia and abroad"}</h2>
 
                         <div className="grid grid-cols-2 md:grid-cols-4 space-y-2">
-                            <div className="bg-blue-500 border-2 border-black w-40 text-center rounded-2xl shadow-level-1 font-sans font-bold h-8 flex flex-col justify-center">{dataBerita?.sourceWebsite.slice(0, 10) ?? "link webiste"}</div>
-                            <div className="bg-green-500 border-2 border-black w-40 text-center rounded-2xl shadow-level-1 font-sans font-bold h-8 flex flex-col justify-center">{dataBerita?.narasumber.slice(0, 5) ?? "narasumber"}</div>
+                            <div className="bg-blue-500 border-2 border-black w-40 text-center rounded-2xl shadow-level-1 font-sans font-bold h-8 flex flex-col justify-center">{dataBerita?.sourceWebsite.slice(0, 6) ?? "link webiste"}</div>
+                            <div className="bg-green-500 border-2 border-black w-40 text-center rounded-2xl shadow-level-1 font-sans font-bold h-8 flex flex-col justify-center">{dataBerita?.narasumber.slice(0, 4) ?? "narasumber"}</div>
                             <div className="bg-yellow-400 border-2 border-black w-40 text-center rounded-2xl shadow-level-1 font-sans font-bold h-8 flex flex-col justify-center">{dataBerita?.readingTime ?? "0 menit"}</div>
                             <div className="bg-primary border-2 border-black w-40 text-center rounded-2xl shadow-level-1 font-sans font-bold h-8 flex flex-col justify-center">{dataBerita?.pageCount ?? "0 page"}</div>
                         </div>
