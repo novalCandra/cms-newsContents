@@ -18,6 +18,7 @@ import {
   Zap,
 } from "lucide-react"
 import ImageLogo from "./assets/icons/logo.png"
+import { Link } from "react-router-dom"
 
 const NAV_LINKS = [
   { label: "Features", href: "#features", active: true },
@@ -170,12 +171,12 @@ function Header() {
         </nav>
 
         <div className="flex shrink-0 items-center gap-space-xs sm:gap-space-sm">
-          <a
-            href="#signup"
+          <Link
+            to={"/auth/login"}
             className="hidden items-center rounded-full px-space-md py-space-sm text-label-lg text-on-surface transition-all hover:bg-surface-container sm:inline-flex"
           >
             Log in
-          </a>
+          </Link>
           <a
             href="#signup"
             className="inline-flex items-center rounded-full border-2 border-ink bg-primary-container px-space-md py-space-sm text-label-md text-white shadow-[0_4px_0_#1a1c1f] transition-all hover:-translate-y-0.5 hover:shadow-[0_6px_0_#1a1c1f] active:translate-y-1 active:shadow-[0_0_0_#1a1c1f] sm:px-space-lg sm:text-label-lg sm:text-label-lg"
@@ -379,9 +380,8 @@ function ExtractBar() {
         <button
           type="submit"
           disabled={state !== "idle"}
-          className={`flex w-full shrink-0 cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-xl border-2 border-ink px-6 py-3 text-label-lg text-ink shadow-level-1 transition-all hover:-translate-y-0.5 hover:shadow-level-2 active:translate-y-1 active:shadow-none disabled:cursor-default sm:w-auto ${
-            state === "done" ? "bg-lime" : "bg-primary"
-          }`}
+          className={`flex w-full shrink-0 cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-xl border-2 border-ink px-6 py-3 text-label-lg text-ink shadow-level-1 transition-all hover:-translate-y-0.5 hover:shadow-level-2 active:translate-y-1 active:shadow-none disabled:cursor-default sm:w-auto ${state === "done" ? "bg-lime" : "bg-primary"
+            }`}
         >
           {state === "stripping" && (
             <>
@@ -508,9 +508,8 @@ function ClutterFreeDifference() {
                   <button
                     key={format}
                     type="button"
-                    className={`rounded border border-ink px-2 py-0.5 text-label-sm text-ink transition-all hover:brightness-105 active:translate-y-0.5 ${
-                      i === 0 ? "bg-secondary" : "bg-tertiary"
-                    }`}
+                    className={`rounded border border-ink px-2 py-0.5 text-label-sm text-ink transition-all hover:brightness-105 active:translate-y-0.5 ${i === 0 ? "bg-secondary" : "bg-tertiary"
+                      }`}
                   >
                     {format}
                   </button>
@@ -582,7 +581,7 @@ function FeaturesGrid() {
       className="container-app py-space-2xl"
     >
       <div className="mx-auto mb-space-2xl max-w-xl text-center">
-       
+
         <h2 className="h-lg uppercase text-ink">
           Engineered for High-Velocity Creators
         </h2>
@@ -684,7 +683,7 @@ function SignupSection() {
   return (
     <section id="signup" className="container-app relative py-space-2xl">
       <div id="pricing" className="mx-auto max-w-xl rounded-3xl border-2 border-ink bg-paper p-space-lg text-center shadow-level-3 sm:p-space-xl">
-        
+
         <h2 className="mb-2 text-headline-sm uppercase tracking-tight text-ink sm:text-headline-md sm:text-headline-md">
           Start Repurposing News Today
         </h2>
