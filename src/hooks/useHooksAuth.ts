@@ -8,7 +8,7 @@ export const useHooksAuthLogin = () => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
         try {
-            const request = await fetch(`http://localhost:3000/api/login`, {
+            const request = await fetch(`${import.meta.env.VITE_API_URL}/login`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -40,7 +40,7 @@ export const useHooksAuthRegister = () => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
         try {
-            const request = await fetch(`http://localhost:3000/api/register`, {
+            const request = await fetch(`${import.meta.env.VITE_API_URL}/register`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
