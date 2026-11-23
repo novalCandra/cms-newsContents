@@ -52,25 +52,25 @@ const FEATURES = [
     icon: Sparkles,
     iconBg: "#FF5A4F",
     title: "Mozilla Readability & JSDOM Core",
-    body: "Battle-tested DOM sanitization strips out sticky banners, iframe video spam, subscription paywall overlays, and heavy third-party tracking scripts instantly.",
-    tag: "Core Sanitizer",
+    body: "Proses sanitasi DOM yang telah teruji dalam praktik ini secara instan menyaring spanduk yang terus muncul, spam video iframe, lapisan paywall berlangganan, dan skrip pelacakan pihak ketiga yang berat.",
+    tag: "Pembersih Inti",
     tagBg: "#FFDAD6",
     footIcon: BadgeCheck,
   },
   {
     icon: BarChart3,
     iconBg: "#4DABFF",
-    title: "Instant Metadata & Metrics",
-    body: "Extract accurate word counts, read times, published dates, canonical URLs, verified author bylines, and high-res feature image headers without hassle.",
-    tag: "Full Meta Inspector",
+    title: "Metadata & Metrik Instan",
+    body: "Ekstrak jumlah kata yang akurat, waktu baca, tanggal terbit, URL kanonik, nama penulis yang terverifikasi, dan gambar utama beresolusi tinggi tanpa kesulitan",
+    tag: "Meta Inspector Lengkap",
     tagBg: "#D0E4FF",
     footIcon: BarChart3,
   },
   {
     icon: RefreshCw,
     iconBg: "#AEEA00",
-    title: "Multi-Format Repurpose Workflows",
-    body: "Export directly to Obsidian-compatible Markdown, raw text for LLM prompts, structured JSON, or split directly into numbered social post drafts.",
+    title: "Alur Kerja Penggunaan Ulang Multi-Format",
+    body: "Ekspor langsung ke format Markdown yang kompatibel dengan Obsidian, teks mentah untuk prompt LLM, JSON terstruktur, atau pisahkan langsung menjadi draf postingan media sosial yang diberi nomor.",
     tag: "1-Click Multi-Export",
     tagBg: "#D4F780",
     footIcon: Zap,
@@ -78,9 +78,9 @@ const FEATURES = [
   {
     icon: ShieldCheck,
     iconBg: "#FFC83D",
-    title: "Enterprise-Grade SSRF Protection",
-    body: "Protected against internal network exposure, malicious redirects, localhost exploits, and infinite redirects through sandboxed headless fetch nodes.",
-    tag: "Strict IP Filtering",
+    title: "Perlindungan SSRF Tingkat Perusahaan",
+    body: "Dilindungi dari paparan jaringan internal, pengalihan berbahaya, eksploitasi localhost, dan pengalihan tak berujung melalui node pengambilan data tanpa antarmuka pengguna yang dijalankan dalam lingkungan sandbox.",
+    tag: "Penyaringan IP yang Ketat",
     tagBg: "#FFDF9C",
     footIcon: ShieldCheck,
   },
@@ -145,11 +145,11 @@ function Header() {
         <a href="#" className="group flex min-w-0 items-center gap-space-sm">
           <img
             src={ImageLogo}
-            alt="NewsToContent logo"
+            alt="Sari logo"
             className="h-9 w-9 shrink-0 rounded-full border-2 border-ink object-cover shadow-[0_4px_0_#1a1c1f] transition-all group-hover:-translate-y-0.5 group-hover:shadow-[0_6px_0_#1a1c1f] sm:h-10 sm:w-10"
           />
           <span className="truncate text-title-md font-extrabold tracking-tight text-on-surface sm:text-headline-sm sm:text-headline-sm">
-            NewsToContent
+            Sari
           </span>
         </a>
 
@@ -423,13 +423,12 @@ function Hero() {
   return (
     <section className="container-app flex flex-col items-center pb-space-2xl pt-space-xl text-center">
 
-      <h1 className="h-xl max-w-4xl uppercase text-ink">News to Content</h1>
+      <h1 className="h-xl max-w-4xl uppercase text-ink">Sari</h1>
       <p className="mt-2 text-headline-sm uppercase text-primary sm:text-headline-md sm:text-headline-md">
-        Paste a link. Get the story.
+        Tempel satu link. Dapat saripatinya.
       </p>
       <p className="mx-auto mt-space-sm max-w-2xl text-body-lg text-on-surface">
-        The clutter-free engine that strips ads, paywalls &amp; trackers from news
-        articles and transforms them into creator-ready social formats in seconds.
+        Bersihkan artikel berita dari iklan dan gangguan, lalu ekstrak poin-poin penting beserta copywriting siap posting dalam hitungan detik—tanpa rumus, tanpa ribet.
       </p>
 
       <GadgetTrio />
@@ -443,10 +442,10 @@ function ClutterFreeDifference() {
     <section id="how-it-works" className="w-full border-y-2 border-ink bg-paper py-space-2xl">
       <div className="container-app">
         <div className="mx-auto mb-space-xl max-w-2xl text-center">
-          <h2 className="h-lg uppercase text-ink">The Clutter-Free Difference</h2>
+          <h2 className="h-lg uppercase text-ink">Perbedaan yang Bebas dari Kekacauan</h2>
           <p className="mt-2 text-body-md text-on-surface-variant">
-            Regular web scraping grabs trash. NewsToContent isolates the pure
-            journalistic signal using server-side DOM sanitization and Readability.
+            Web scraping biasa hanya mengumpulkan data yang tidak berguna. Sari memisahkan
+            sinyal jurnalistik murni dengan menggunakan pembersihan DOM di sisi server dan Readability.
           </p>
         </div>
 
@@ -583,11 +582,10 @@ function FeaturesGrid() {
       <div className="mx-auto mb-space-2xl max-w-xl text-center">
 
         <h2 className="h-lg uppercase text-ink">
-          Engineered for High-Velocity Creators
+          Dirancang Khusus untuk Pengguna yang Aktif
         </h2>
         <p className="mt-2 text-body-md text-on-surface-variant">
-          Everything you need to turn raw journalism into viral social threads,
-          newsletters, and podcasts.
+          Segala yang Anda butuhkan untuk mengubah liputan jurnalistik mentah menjadi utas media sosial yang viral, buletin, dan podcast.
         </p>
       </div>
 
@@ -632,11 +630,8 @@ function CreatorPro() {
     <section id="showcase" className="relative w-full overflow-hidden border-y-2 border-ink bg-paper py-space-2xl">
       <div className="container-app">
         <div className="relative mx-auto flex max-w-3xl flex-col items-center text-center">
-          <span className="mb-2 text-label-md uppercase tracking-wider text-on-surface-variant">
-            Included with your Creator pass:
-          </span>
           <h2 className="max-w-xl text-headline-md uppercase leading-tight text-ink sm:text-headline-lg sm:text-headline-lg">
-            Everything You Need to Ship Daily News Content
+            Semua yang Anda Butuhkan untuk Menyebarkan Konten Berita Harian
           </h2>
 
           <div className="mt-space-xl w-full max-w-lg space-y-3 text-left">
@@ -685,11 +680,11 @@ function SignupSection() {
       <div id="pricing" className="mx-auto max-w-xl rounded-3xl border-2 border-ink bg-paper p-space-lg text-center shadow-level-3 sm:p-space-xl">
 
         <h2 className="mb-2 text-headline-sm uppercase tracking-tight text-ink sm:text-headline-md sm:text-headline-md">
-          Start Repurposing News Today
+          Mulailah Memanfaatkan Ulang Berita Mulai Hari Ini
         </h2>
         <p className="mb-space-lg text-body-md text-on-surface-variant">
-          Join 10,000+ newsletter writers, tech founders, and social creators
-          turning daily news into high-impact content.
+          Bergabunglah dengan lebih dari 10.000 penulis buletin, pendiri perusahaan teknologi, dan kreator media sosial
+          yang mengubah berita harian menjadi konten yang berdampak besar.
         </p>
 
         <form className="flex flex-col gap-3 text-left" onSubmit={onSubmit}>
@@ -740,20 +735,6 @@ function SignupSection() {
             🎉 You&apos;re in! Check your inbox for your instant API token.
           </div>
         )}
-
-        <p className="mt-space-md text-body-sm text-on-surface-variant">
-          No credit card required • Instant 14-day Pro trial • Cancel anytime
-        </p>
-      </div>
-
-      <div className="mt-space-xl text-center text-body-sm text-on-surface-variant">
-        <p>Interested in team API access or custom news scraper webhooks?</p>
-        <a
-          href="mailto:hello@newstocontent.com"
-          className="text-label-md text-ink underline transition-colors hover:text-primary"
-        >
-          hello@newstocontent.com
-        </a>
       </div>
     </section>
   )
@@ -772,15 +753,15 @@ function Footer() {
                 className="h-8 w-8 shrink-0 rounded-full border border-ink object-cover shadow-[0_3px_0_#1a1c1f]"
               />
               <span className="text-headline-sm font-extrabold text-on-surface">
-                NewsToContent
+                Sari
               </span>
             </div>
             <p className="max-w-sm text-title-md text-on-surface-variant">
-              Ideas in. Action out.
+              Ide masuk. Tindakan keluar.
             </p>
             <p className="max-w-sm text-body-md text-on-surface-variant">
-              Transform real-time news, niche editorial releases, and newsletters
-              into production-grade multi-platform creator campaigns instantly.
+              Ubah berita terkini, siaran pers khusus, dan buletin
+              menjadi kampanye kreator multi-platform berkualitas produksi secara instan.
             </p>
           </div>
           <div className="flex flex-col gap-space-sm md:col-span-4">
@@ -821,7 +802,7 @@ function Footer() {
         </div>
         <div className="flex flex-col items-center justify-between gap-space-md border-t-2 border-ink pt-space-lg text-center text-body-sm text-on-surface-variant sm:text-left md:flex-row">
           <p>
-            © 2025 NewsToContent Inc. All rights reserved. Crafted with tactile
+            © 2026 Sari Inc. All rights reserved. Crafted with tactile
             neo-pop energy.
           </p>
           <div className="flex items-center gap-space-lg">
