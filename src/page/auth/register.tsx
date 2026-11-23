@@ -5,7 +5,7 @@ import { useHooksAuthRegister } from "../../hooks/useHooksAuth";
 function RegisterPage() {
     const { fullname, setFullName, email, setEmail, password, setPassword, handleSubmit } = useHooksAuthRegister()
     return (
-        <div className="flex flex-col min-h-screen md:h-full justify-center items-center">
+        <div className="flex flex-col justify-center items-center">
             <section className="flex flex-col justify-center items-center text-center bg-gray-100 h-160 md:h-190 w-full rounded-2xl space-y-3.5">
                 <section className="w-96 md:w-120 space-y-4 px-4 py-4 md:py-4 md:px-8 ">
                     <h1 className="font-sans text-3xl font-bold">Create your account</h1>
