@@ -10,11 +10,13 @@ export const UseHookArticleArtificial = () => {
     const handleSubmit = async (e: FormEvent) => {
         setLoading(true)
         e.preventDefault()
+        const token = sessionStorage.getItem("token")
         try {
             const request = await fetch(`${import.meta.env.VITE_API_URL}/generate`, {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`
                 },
                 body: JSON.stringify({
                     url: urlLink
