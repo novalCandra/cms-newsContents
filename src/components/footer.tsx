@@ -4,7 +4,7 @@ export default function Footer() {
         <footer className="flex flex-col space-y-1 justify-center border-t-2 border-black bg-transparent h-14 md:h-10">
             <div className="flex flex-row items-center justify-center">
                 <img src={ImageLogo} alt="fotoLogo" className="w-10 h-10" />
-                <p className="font-sans text-label-md">NewsToContent — Ideas in. Action out.</p>
+                <p className="font-sans text-label-md">Sari — Ideas in. Action out.</p>
             </div>
         </footer>
     )

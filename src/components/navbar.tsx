@@ -7,8 +7,8 @@ export default function Navbar() {
                     <img src={ImageLogo} alt="fotoLogo" className="w-10 h-10" />
                 </div>
                 <div className='flex flex-col'>
-                    <h1 className='text-headline-lg-mobile sm:text-headline-sm md:text-headline-lg lg:text-headline-md font-sans'>NewsToContent</h1>
-                    <p className="font-sans">News in. Content out.</p>
+                    <h1 className='text-headline-lg-mobile sm:text-headline-sm md:text-headline-lg lg:text-headline-md font-sans'>Sari</h1>
+                    <p className="font-sans">Sari. Content out.</p>
                 </div>
             </div>
         </div>
